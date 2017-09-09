@@ -1,0 +1,126 @@
+/*顶部样式设置*/
+.top{
+	background-color: #ba2727;
+}
+.top h3{
+	font-size: 23px;
+	color: white;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+/*end*/
+
+/*顶部坐标的样式设置 商品分类 left*/
+.main .left{
+	width: 20%;
+	float: left;
+}
+.main .left ul li{
+	width: 100%;
+	line-height: 30px;
+	border-bottom: 1px solid #bbb;
+}
+.main .left ul li a{
+	width: 100%;
+	color: black;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 5px;
+	display: inline-block;
+}
+.main ul li.cur{
+	background-color: #9D9D9D;
+}
+.main .right{
+	background-color: #eee;
+	width: 80%;
+	float: right;
+	overflow: scroll;
+	height: 100%;
+	margin-bottom: 40px;
+}
+.main .product-item{
+	width: 100%;
+	display: block;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.main .right .li{
+	width: 100%;
+	float: left;
+}
+.main .product-item .product-img{
+	width: 100%;
+	max-height: 500px;
+	display: block;
+}
+.main .product-item .product-title{
+	font-size: 16px;
+	font-weight: bold;
+}
+.main .product-item .product-desc{
+	color: #999999;
+	font-size: 14px;
+	margin: 10px 0;
+}
+.main .product-item .product-price{
+	color: red;
+	font-size: 18px;
+	font-weight: bold;
+}
+.main .product-item .action .p-num{
+	border: 1px solid #999999;
+	width: 30px;
+	height: 20px;
+	text-align: center;
+	font-size: 16px;
+	display: inline-block;
+}
+.main .product-item .action .p-btn-car{
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	font-size: 16px;
+	display: inline-block;
+	background-color: red;
+	color: white;
+	line-height: 25px;
+	font-weight: bold;
+}
+.main .product-item .action {
+	float: right;
+}
+.footer{
+	width: 100%;
+	position: fixed;
+	height: 40px;
+	bottom: 0;
+	background-color: #fff;
+	box-shadow: 0 -2px 2px gray;
+}
+.footer span{
+	float: left;
+	line-height: 40px;
+	margin-left: 10px;
+	font-weight: bold;
+}
+.footer span em{
+	color: red;
+	font-weight: bold;
+	font-size: 17px;
+}
+.footer .btn-sure-order{
+	float: right;
+	background-color: red;
+	text-decoration: none;
+	width: 125px;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+	color: #fff;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-right: 10px;
+}

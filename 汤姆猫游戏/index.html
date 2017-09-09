@@ -1,0 +1,137 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>汤姆猫</title>
+    <style>
+        body,
+        img {
+            height: 100%;
+            margin: 0 auto;
+            width: 50vw;
+        }
+    </style>
+</head>
+
+<body onclick="action(event)">
+    <img src="angry\angry_00.jpg" id="tom" alt="">
+    <audio src="" id="player"></audio>
+
+
+    <script>
+        var img = document.getElementById('tom');
+        var player = document.getElementById('player');
+        // 对象的可见高度和宽度,不包含滚动条等边线,会随着窗口显示的大小而改变
+        var w = document.documentElement.clientWidth;
+        var h = document.documentElement.clientHeight;
+
+        function play(name, total, startAt) {
+            var i = 0;
+            animate();
+
+            function animate() {
+                var src = name + '/' + name + '_' + (i < 10 ? '0' : '') + i + '.jpg';
+                img.src = src;
+                if (i < total) {
+                    timer = setTimeout(animate, 100);
+
+                    if (i == startAt) {
+                        player.play();
+                        player.src = 'sounds/' + name + '.m4a';
+                    }
+                    if (name == 'drink' && i == 10) { // drink需要两个音频
+                        player.play();
+                        player.src = 'sounds\drink.m4a';
+                    }
+                    if (name == 'knockout' && i == 0) {
+                        player.src = 'sounds/knockout.m4a';
+                        player.play();
+                    }
+                    if (name == 'cymbal' && i == 8) {
+                        player.src = 'sounds/cymbal.m4a';
+                        player.play();
+                    }
+                    if (name == 'angry' && i == 6) {
+                        player.src = 'sounds/angry.m4a';
+                        player.play();
+                    }
+                    if (name == 'stomach' && i == 2) {
+                        player.src = 'sounds/stomach.m4a';
+                        player.play();
+                    }
+                    if (name == 'eat' && i == 9) {
+                        player.src = 'sounds/eat.m4a';
+                        player.play();
+                    }
+                    if (name == 'fart' && i == 0) {
+                        player.src = 'sounds/fart.m4a';
+                        player.play();
+                    }
+                    if (name == 'foot_left' && i == 4) {
+                        player.src = 'sounds/foot_left.m4a';
+                        player.play();
+                    }
+                    if (name == 'foot_right' && i == 4) {
+                        player.src = 'sounds/foot_right.m4a';
+                        player.play();
+                    }
+                    if (name == 'scratch' && i == 20) {
+                        player.src = 'sounds/scratch.m4a';
+                        player.play();
+                    }
+                    if (name == 'pie' && i == 13) {
+                        player.src = 'sounds/pie.m4a';
+                        player.play();
+                    }
+
+                    i++;
+                }
+            }
+        }
+
+        function action(event) {
+            var x = event.pageX * 360 / w;
+            var y = event.pageY * 360 / h;
+            console.log(x);
+            console.log(y);
+            if (x > 158 && x < 200 && y > 61 && y < 84) {
+                play('angry', 25, 0); //生气
+            }
+            if (x > 164 && x < 201 && y > 250 && y < 300) {
+                play('stomach', 33, 0); //胃
+            }
+            if (x > 68 && x < 114 && y > 60 && y < 83) {
+                play('knockout', 80, 0); //击倒
+            }
+            if (x > 203 && x < 217 && y > 195 && y < 218) {
+                play('cymbal', 12, 0); //铙钹
+            }
+            if (x > 169 && x < 190 && y > 180 && y < 191) {
+                play('drink', 80, 0); //喝
+            }
+            if (x > 164 && x < 192 && y > 162 && y < 173) {
+                play('eat', 39, 0); //吃
+            }
+            if (x > 212 && x < 223 && y > 271 && y < 323) {
+                play('fart', 27, 0); //屁
+            }
+            if (x > 158 && x < 174 && y > 326 && y < 344) {
+                play('foot_left', 29, 0); //左脚
+            }
+            if (x > 180 && x < 205 && y > 325 && y < 345) {
+                play('foot_right', 29, 0); //右脚
+            }
+            if (x > 158 && x < 207 && y > 150 && y < 155) {
+                play('pie', 23, 0); //啪
+            }
+            if (x > 135 && x < 160 && y > 194 && y < 220) {
+                play('scratch', 55, 0); //刮擦声
+            }
+        }
+    </script>
+</body>
+
+</html>
